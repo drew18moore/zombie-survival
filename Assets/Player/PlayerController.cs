@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 1f;
-    public float collisionOffset = 0.05f;
+    public float collisionOffset = 0f;
     public ContactFilter2D movementFilter;
 
     Vector2 movementInput;
