@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyHealthController : MonoBehaviour
 {
-    private float health;
+    [SerializeField] private float health = 100f;
     public float Health
     {
         get
