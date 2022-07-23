@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
+    bool canMove = true;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -24,31 +26,34 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (movementInput != Vector2.zero)
+        if (canMove)
         {
-            bool success = TryMove(movementInput);
-
-            if (!success)
+            if (movementInput != Vector2.zero)
             {
-                success = TryMove(new Vector2(movementInput.x, 0));
+                bool success = TryMove(movementInput);
 
                 if (!success)
                 {
-                    success = TryMove(new Vector2(0, movementInput.y));
-                }
-            }
-            animator.SetBool("isMoving", success);
-        }
-        else
-        {
-            animator.SetBool("isMoving", false);
-        }
+                    success = TryMove(new Vector2(movementInput.x, 0));
 
-        // Flip sprite based on movement direction
-        if (movementInput.x < 0)
-            spriteRenderer.flipX = true;
-        else if (movementInput.x > 0)
-            spriteRenderer.flipX = false;
+                    if (!success)
+                    {
+                        success = TryMove(new Vector2(0, movementInput.y));
+                    }
+                }
+                animator.SetBool("isMoving", success);
+            }
+            else
+            {
+                animator.SetBool("isMoving", false);
+            }
+
+            // Flip sprite based on movement direction
+            if (movementInput.x < 0)
+                spriteRenderer.flipX = true;
+            else if (movementInput.x > 0)
+                spriteRenderer.flipX = false;
+        }
     }
 
     bool TryMove(Vector2 direction)
@@ -69,5 +74,20 @@ public class PlayerController : MonoBehaviour
 
     void OnMove(InputValue movementValue) {
         movementInput = movementValue.Get<Vector2>();
+    }
+
+    void OnFire()
+    {
+        animator.SetTrigger("meleeAttack");
+    }
+
+    public void LockMovement()
+    {
+        canMove = false;
+    }
+
+    public void UnlockMovement()
+    {
+        canMove = true;
     }
 }
