@@ -1,10 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHealthController : MonoBehaviour
 {
-    [SerializeField] private float health = 100f;
+    [SerializeField] private float maxHealth = 100f;
+    [SerializeField] private float health;
+
+    [SerializeField] private GameObject healthBarUI;
+    [SerializeField] private Slider slider;
+
+    private void Start()
+    {
+        health = maxHealth;
+        slider.value = CalculateHealth();
+    }
+
     public float Health
     {
         get
@@ -14,10 +26,19 @@ public class EnemyHealthController : MonoBehaviour
         set
         {
             health = value;
+            print("ENEMY HEALTH = " + health);
+
+            slider.value = CalculateHealth();
+
             if (health <= 0)
             {
                 Destroy(gameObject);
             }
         }
+    }
+
+    private float CalculateHealth()
+    {
+        return health / maxHealth;
     }
 }
