@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class EnemyHealthController : MonoBehaviour
 {
     [SerializeField] private float maxHealth = 100f;
-    [SerializeField] private float health;
+    private float health;
 
     [SerializeField] private GameObject healthBarUI;
     [SerializeField] private Slider slider;
@@ -26,12 +26,13 @@ public class EnemyHealthController : MonoBehaviour
         set
         {
             health = value;
-            print("ENEMY HEALTH = " + health);
+            print("ENEMY HEALTH UPDATED TO: " + health);
 
             slider.value = CalculateHealth();
 
             if (health <= 0)
             {
+
                 Destroy(gameObject);
             }
         }

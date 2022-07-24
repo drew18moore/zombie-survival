@@ -73,6 +73,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 50
   swordCollider: {fileID: 4040912074463428138}
+  pointsController: {fileID: 0}
+  pointsOnHit: 100
 --- !u!1 &5492952453743447300
 GameObject:
   m_ObjectHideFlags: 0
@@ -85,6 +87,7 @@ GameObject:
   - component: {fileID: 2032118250146603879}
   - component: {fileID: 585013076329048343}
   - component: {fileID: 8655810533581046564}
+  - component: {fileID: 5767853226200837853}
   - component: {fileID: 328140556842077772}
   - component: {fileID: 8813550802587234403}
   - component: {fileID: 5603110523364256731}
@@ -222,6 +225,20 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   swordAttack: {fileID: 8248819379386679769}
+--- !u!114 &5767853226200837853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5492952453743447300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e9bbce63ae078345bb6a379e60d5cc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingPoints: 500
+  points: 0
 --- !u!50 &328140556842077772
 Rigidbody2D:
   serializedVersion: 4

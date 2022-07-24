@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class SwordAttack : MonoBehaviour
 {
-    public float damage = 50f;
-    public Collider2D swordCollider;
+    [SerializeField] float damage = 50f;
+    [SerializeField] Collider2D swordCollider;
+    [SerializeField] PointsController pointsController;
+    [SerializeField] float pointsOnHit = 100f;
     Vector2 rightAttackOffset;
 
     private void Start()
     {
         rightAttackOffset = transform.position;
+        pointsController = GetComponentInParent<PointsController>();
     }
 
     public void AttackRight()
@@ -40,6 +43,7 @@ public class SwordAttack : MonoBehaviour
             if (enemy != null)
             {
                 enemy.Health -= damage;
+                pointsController.Points += pointsOnHit;
             }
         }
     }
