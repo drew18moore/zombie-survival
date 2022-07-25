@@ -14,7 +14,6 @@ public class EnemyHealthController : MonoBehaviour
     private void Start()
     {
         health = maxHealth;
-        slider.value = CalculateHealth();
     }
 
     public float Health
@@ -25,6 +24,7 @@ public class EnemyHealthController : MonoBehaviour
         }
         set
         {
+            healthBarUI.SetActive(true);
             health = value;
             print("ENEMY HEALTH UPDATED TO: " + health);
 
