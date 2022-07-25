@@ -239,6 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingPoints: 500
   points: 0
+  pointsText: {fileID: 0}
 --- !u!50 &328140556842077772
 Rigidbody2D:
   serializedVersion: 4
@@ -257,8 +258,8 @@ Rigidbody2D:
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &8813550802587234403
 BoxCollider2D:
