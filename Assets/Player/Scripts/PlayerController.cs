@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
 
     void OnFire()
     {
-        animator.SetTrigger("meleeAttack");
+        //animator.SetTrigger("meleeAttack");
     }
 
     public void SwordAttack()
