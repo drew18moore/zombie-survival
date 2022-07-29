@@ -562,6 +562,23 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &899168154 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6673647077474989528, guid: f24cbc5ac53f0fe49afe014355cff326, type: 3}
+  m_PrefabInstance: {fileID: 7165307288089531639}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &899168156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899168154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8076d052314c2534db2bbd0a65ae03c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &990632696 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1072764439893864645, guid: f24cbc5ac53f0fe49afe014355cff326, type: 3}
@@ -4319,6 +4336,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3916620492652167198, guid: f24cbc5ac53f0fe49afe014355cff326, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5492952453743447300, guid: f24cbc5ac53f0fe49afe014355cff326, type: 3}
       propertyPath: m_Name
       value: Player
@@ -4327,8 +4348,16 @@ PrefabInstance:
       propertyPath: pointsText
       value: 
       objectReference: {fileID: 1777621250}
+    - target: {fileID: 6673647077474989528, guid: f24cbc5ac53f0fe49afe014355cff326, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8655810533581046564, guid: f24cbc5ac53f0fe49afe014355cff326, type: 3}
       propertyPath: collisionOffset
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8834274000320882436, guid: f24cbc5ac53f0fe49afe014355cff326, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
