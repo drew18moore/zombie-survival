@@ -5,8 +5,6 @@ using UnityEngine.InputSystem;
 
 public class FollowMouse : MonoBehaviour
 {
-    [SerializeField] Transform shootPoint;
-    Vector2 shootPointsPos;
     SpriteRenderer weaponSprite;
     Vector2 mousePos;
     Vector2 lookDir;
@@ -15,7 +13,6 @@ public class FollowMouse : MonoBehaviour
     private void Start()
     {
         weaponSprite = GetComponent<SpriteRenderer>();
-        shootPointsPos = shootPoint.transform.position;
     }
 
     // Update is called once per frame
