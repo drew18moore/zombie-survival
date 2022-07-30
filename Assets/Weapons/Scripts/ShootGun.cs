@@ -5,26 +5,49 @@ using UnityEngine.InputSystem;
 
 public class ShootGun : MonoBehaviour
 {
-    [SerializeField] Transform pistol;
+    [SerializeField] GameObject pistolController;
+    [SerializeField] GameObject rifleController;
     Vector2 direction;
 
     [SerializeField] GameObject bullet;
-    [SerializeField] Transform shootPoint;
+    [SerializeField] Transform pistolShootPoint;
+    [SerializeField] Transform rifleShootPoint;
     [SerializeField] float bulletVel;
+
+    bool pistolCanShoot = false;
+    bool rifleCanShoot = false;
 
     private void Update()
     {
-        
+        pistolCanShoot = pistolController.activeSelf;
+        print("CAN SHOOT PISTOL?: " + pistolCanShoot);
+
+        rifleCanShoot = rifleController.activeSelf;
+        print("CAN SHOOT RIFLE?: " + rifleCanShoot);
     }
 
     void OnFire()
     {
-        Shoot();
+        if (pistolCanShoot)
+        {
+            ShootPistol();
+        }
+        else if (rifleCanShoot)
+        {
+            ShootRifle();
+        }
+        
     }
 
-    void Shoot()
+    void ShootPistol()
     {
-        GameObject bulletInstance = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
+        GameObject bulletInstance = Instantiate(bullet, pistolShootPoint.position, pistolShootPoint.rotation);
+        bulletInstance.GetComponent<Rigidbody2D>().AddForce(bulletInstance.transform.right * bulletVel);
+    }
+
+    void ShootRifle()
+    {
+        GameObject bulletInstance = Instantiate(bullet, rifleShootPoint.position, rifleShootPoint.rotation);
         bulletInstance.GetComponent<Rigidbody2D>().AddForce(bulletInstance.transform.right * bulletVel);
     }
 }

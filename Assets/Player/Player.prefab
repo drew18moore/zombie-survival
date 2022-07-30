@@ -75,6 +75,37 @@ MonoBehaviour:
   swordCollider: {fileID: 4040912074463428138}
   pointsController: {fileID: 0}
   pointsOnHit: 100
+--- !u!1 &1174057089248870921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 897632199596087132}
+  m_Layer: 0
+  m_Name: ShootPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &897632199596087132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174057089248870921}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4953680659477366077}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1545906360108536873
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,6 +148,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4953680659477366077}
+  - component: {fileID: 9055528819411520530}
   m_Layer: 0
   m_Name: RifleController
   m_TagString: Untagged
@@ -137,9 +169,22 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2430632581270377422}
+  - {fileID: 897632199596087132}
   m_Father: {fileID: 3503231840664065188}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9055528819411520530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5072652914750471182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8076d052314c2534db2bbd0a65ae03c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5108531750197147118
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,9 +462,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3813494ab2eb1ea418a35cffb2ef9d3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pistol: {fileID: 8487137461789498949}
+  pistolController: {fileID: 5608446027003227485}
+  rifleController: {fileID: 5072652914750471182}
   bullet: {fileID: 5085614246968880157, guid: 1ad40941ad664ef4781d88cb85ea8ed7, type: 3}
-  shootPoint: {fileID: 399004699369410038}
+  pistolShootPoint: {fileID: 399004699369410038}
   bulletVel: 100
 --- !u!1 &5608446027003227485
 GameObject:
@@ -467,7 +513,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8076d052314c2534db2bbd0a65ae03c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootPoint: {fileID: 2302591170835559449}
 --- !u!1 &6673647077474989528
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,7 +525,7 @@ GameObject:
   - component: {fileID: 5928067430650773710}
   - component: {fileID: 56484458495825210}
   m_Layer: 0
-  m_Name: rifle
+  m_Name: RifleSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -565,7 +610,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8076d052314c2534db2bbd0a65ae03c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootPoint: {fileID: 0}
 --- !u!1 &8834274000320882436
 GameObject:
   m_ObjectHideFlags: 0
