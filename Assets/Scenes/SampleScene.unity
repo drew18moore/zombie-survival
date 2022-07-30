@@ -123,6 +123,16 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &193797972 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8487137461789498949, guid: f24cbc5ac53f0fe49afe014355cff326, type: 3}
+  m_PrefabInstance: {fileID: 7165307288089531639}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &251032350 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 399004699369410038, guid: f24cbc5ac53f0fe49afe014355cff326, type: 3}
+  m_PrefabInstance: {fileID: 7165307288089531639}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,6 +589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8076d052314c2534db2bbd0a65ae03c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootPoint: {fileID: 0}
 --- !u!4 &990632696 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1072764439893864645, guid: f24cbc5ac53f0fe49afe014355cff326, type: 3}
@@ -636,6 +647,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1608645747 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5492952453743447300, guid: f24cbc5ac53f0fe49afe014355cff326, type: 3}
+  m_PrefabInstance: {fileID: 7165307288089531639}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1608645755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608645747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3813494ab2eb1ea418a35cffb2ef9d3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pistol: {fileID: 193797972}
+  bullet: {fileID: 5085614246968880157, guid: 1ad40941ad664ef4781d88cb85ea8ed7, type: 3}
+  shootPoint: {fileID: 251032350}
+  bulletVel: 100
 --- !u!1 &1636395988
 GameObject:
   m_ObjectHideFlags: 0
@@ -4183,7 +4215,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7789968, y: 1}
+    m_SensorSize: {x: 1.7783018, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4340,6 +4372,10 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4206861938055877443, guid: f24cbc5ac53f0fe49afe014355cff326, type: 3}
+      propertyPath: shootPoint
+      value: 
+      objectReference: {fileID: 251032350}
     - target: {fileID: 5492952453743447300, guid: f24cbc5ac53f0fe49afe014355cff326, type: 3}
       propertyPath: m_Name
       value: Player

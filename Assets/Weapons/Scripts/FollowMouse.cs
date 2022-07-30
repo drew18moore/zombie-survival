@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class FollowMouse : MonoBehaviour
 {
+    [SerializeField] Transform shootPoint;
+    Vector2 shootPointsPos;
     SpriteRenderer weaponSprite;
     Vector2 mousePos;
     Vector2 lookDir;
@@ -13,6 +15,7 @@ public class FollowMouse : MonoBehaviour
     private void Start()
     {
         weaponSprite = GetComponent<SpriteRenderer>();
+        shootPointsPos = shootPoint.transform.position;
     }
 
     // Update is called once per frame
@@ -21,15 +24,16 @@ public class FollowMouse : MonoBehaviour
         mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         lookDir = mousePos - (Vector2)transform.position;
         angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+        /*
         if (mousePos.x < transform.position.x)
         {
-            weaponSprite.flipX = true;
-            angle += 180f;
+            weaponSprite.flipY = true;
         }
         else
         {
-            weaponSprite.flipX = false;
+            weaponSprite.flipY = false;
         }
+        */
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 }
