@@ -20,10 +20,10 @@ public class ShootGun : MonoBehaviour
     private void Update()
     {
         pistolCanShoot = pistolController.activeSelf;
-        print("CAN SHOOT PISTOL?: " + pistolCanShoot);
+        //print("CAN SHOOT PISTOL?: " + pistolCanShoot);
 
         rifleCanShoot = rifleController.activeSelf;
-        print("CAN SHOOT RIFLE?: " + rifleCanShoot);
+        //print("CAN SHOOT RIFLE?: " + rifleCanShoot);
     }
 
     void OnFire()
