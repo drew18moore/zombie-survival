@@ -30,15 +30,16 @@ public class ShootGun : MonoBehaviour
     {
         if (pistolCanShoot)
         {
-            ShootPistol();
+            pistolController.GetComponent<Shoot>().ShootGun();
         }
         else if (rifleCanShoot)
         {
-            ShootRifle();
+            rifleController.GetComponent<Shoot>().ShootGun();
         }
         
     }
 
+/*
     void ShootPistol()
     {
         GameObject bulletInstance = Instantiate(bullet, pistolShootPoint.position, pistolShootPoint.rotation);
@@ -50,4 +51,5 @@ public class ShootGun : MonoBehaviour
         GameObject bulletInstance = Instantiate(bullet, rifleShootPoint.position, rifleShootPoint.rotation);
         bulletInstance.GetComponent<Rigidbody2D>().AddForce(bulletInstance.transform.right * bulletVel);
     }
+    */
 }

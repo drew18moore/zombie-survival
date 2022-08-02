@@ -149,6 +149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4953680659477366077}
   - component: {fileID: 9055528819411520530}
+  - component: {fileID: 50733987172671284}
   m_Layer: 0
   m_Name: RifleController
   m_TagString: Untagged
@@ -185,6 +186,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8076d052314c2534db2bbd0a65ae03c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &50733987172671284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5072652914750471182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba5a833e91994acdb34cf2ada798979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootPoint: {fileID: 897632199596087132}
+  bullet: {fileID: 5085614246968880157, guid: 1ad40941ad664ef4781d88cb85ea8ed7, type: 3}
+  bulletSpeed: 100
 --- !u!1 &5108531750197147118
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,6 +494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2302591170835559449}
   - component: {fileID: 2104275357306679499}
+  - component: {fileID: 4078627422701586071}
   m_Layer: 0
   m_Name: PistolController
   m_TagString: Untagged
@@ -514,6 +531,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8076d052314c2534db2bbd0a65ae03c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4078627422701586071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608446027003227485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba5a833e91994acdb34cf2ada798979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootPoint: {fileID: 399004699369410038}
+  bullet: {fileID: 5085614246968880157, guid: 1ad40941ad664ef4781d88cb85ea8ed7, type: 3}
+  bulletSpeed: 100
 --- !u!1 &6673647077474989528
 GameObject:
   m_ObjectHideFlags: 0
