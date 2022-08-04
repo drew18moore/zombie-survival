@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public ContactFilter2D movementFilter;
     public SwordAttack swordAttack;
 
+    PlayerInput input;
+    InputAction meleeAction;
     Vector2 movementInput;
     SpriteRenderer spriteRenderer;
     Rigidbody2D rb;
@@ -23,6 +25,16 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        input = GetComponent<PlayerInput>();
+        meleeAction = input.actions["Melee"];
+    }
+
+    private void Update()
+    {
+        if (meleeAction.ReadValue<float>() == 1)
+        {
+            animator.SetTrigger("meleeAttack");
+        }
     }
 
     private void FixedUpdate()
@@ -82,7 +94,7 @@ public class PlayerController : MonoBehaviour
         movementInput = movementValue.Get<Vector2>();
     }
 
-    void OnFire()
+    void OnMelee()
     {
         //animator.SetTrigger("meleeAttack");
     }
