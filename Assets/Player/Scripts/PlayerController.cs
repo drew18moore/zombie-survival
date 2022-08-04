@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float collisionOffset = 0f;
     public ContactFilter2D movementFilter;
     public SwordAttack swordAttack;
+    public WeaponSwitcher weaponSwitcher;
 
     PlayerInput input;
     InputAction meleeAction;
@@ -94,13 +95,9 @@ public class PlayerController : MonoBehaviour
         movementInput = movementValue.Get<Vector2>();
     }
 
-    void OnMelee()
-    {
-        //animator.SetTrigger("meleeAttack");
-    }
-
     public void SwordAttack()
     {
+        weaponSwitcher.currentWeapon.SetActive(false);
         LockMovement();
         if (spriteRenderer.flipX == true) swordAttack.AttackLeft();
         else swordAttack.AttackRight();
@@ -108,6 +105,7 @@ public class PlayerController : MonoBehaviour
 
     public void StopSwordAttack()
     {
+        weaponSwitcher.currentWeapon.SetActive(true);
         UnlockMovement();
         swordAttack.StopAttack();
     }

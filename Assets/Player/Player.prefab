@@ -228,7 +228,7 @@ MonoBehaviour:
   shootPoint: {fileID: 897632199596087132}
   bullet: {fileID: 5085614246968880157, guid: 1ad40941ad664ef4781d88cb85ea8ed7, type: 3}
   bulletSpeed: 100
-  fireRate: 0.5
+  fireRate: 0.1
   nextFire: 0
   input: {fileID: 585013076329048343}
   fireAction:
@@ -422,6 +422,7 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   swordAttack: {fileID: 8248819379386679769}
+  weaponSwitcher: {fileID: 601656037122373131}
 --- !u!114 &5767853226200837853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,7 +567,7 @@ MonoBehaviour:
   shootPoint: {fileID: 399004699369410038}
   bullet: {fileID: 5085614246968880157, guid: 1ad40941ad664ef4781d88cb85ea8ed7, type: 3}
   bulletSpeed: 100
-  fireRate: 1
+  fireRate: 0.25
   nextFire: 0
   input: {fileID: 585013076329048343}
   fireAction:

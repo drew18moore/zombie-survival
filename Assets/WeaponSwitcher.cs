@@ -44,6 +44,7 @@ public class WeaponSwitcher : MonoBehaviour
             else
                 currentWeaponIndex = totalWeapons - 1;
             guns[currentWeaponIndex].SetActive(true);
+            currentWeapon = guns[currentWeaponIndex];
         }
 
 
@@ -56,6 +57,7 @@ public class WeaponSwitcher : MonoBehaviour
             else
                 currentWeaponIndex = 0;
             guns[currentWeaponIndex].SetActive(true);
+            currentWeapon = guns[currentWeaponIndex];
         }
     }
 }
