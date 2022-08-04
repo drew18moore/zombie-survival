@@ -58,6 +58,5 @@ public class WeaponSwitcher : MonoBehaviour
                 currentWeaponIndex = 0;
             guns[currentWeaponIndex].SetActive(true);
         }
-        print(currentWeaponIndex);
     }
 }
