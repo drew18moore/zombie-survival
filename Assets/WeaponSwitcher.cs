@@ -26,7 +26,6 @@ public class WeaponSwitcher : MonoBehaviour
         {
             guns[i] = transform.GetChild(i).gameObject;
             guns[i].SetActive(false);
-            print(guns[i]);
         }
         currentWeapon = guns[starterWeaponIndex];
         currentWeapon.SetActive(true);
