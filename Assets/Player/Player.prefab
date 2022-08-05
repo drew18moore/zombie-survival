@@ -230,6 +230,7 @@ MonoBehaviour:
   bulletSpeed: 100
   fireRate: 0.1
   nextFire: 0
+  damage: 50
   input: {fileID: 585013076329048343}
   fireAction:
     m_Name: Fire
@@ -569,6 +570,7 @@ MonoBehaviour:
   bulletSpeed: 100
   fireRate: 0.25
   nextFire: 0
+  damage: 25
   input: {fileID: 585013076329048343}
   fireAction:
     m_Name: Fire

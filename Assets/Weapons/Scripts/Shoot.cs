@@ -11,6 +11,7 @@ public class Shoot : MonoBehaviour
     public float bulletSpeed;
     public float fireRate;
     public float nextFire;
+    public float damage;
 
     // Input
     [SerializeField] PlayerInput input;
