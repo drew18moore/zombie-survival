@@ -8,12 +8,14 @@ public class BuyMenu : MonoBehaviour
 {
     Transform container;
     Transform shopItemTemplate;
+    PointsController pointsController;
 
     private void Awake()
     {
         container = transform.Find("container");
         shopItemTemplate = container.Find("BuyMenuItemTemplate");
         shopItemTemplate.gameObject.SetActive(false);
+        pointsController = GameObject.Find("Player").GetComponent<PointsController>();
     }
 
     private void Start()
@@ -39,6 +41,8 @@ public class BuyMenu : MonoBehaviour
 
     void TryBuyItem(Item.ItemType itemType)
     {
-        print("TRYING TO BUY " + itemType.ToString());
+        print("TRYING TO BUY " + itemType.ToString() + " for " + Item.GetCost(itemType));
+        print("Player has " + pointsController.Points + " points");
+
     }
 }
