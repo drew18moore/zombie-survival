@@ -17,6 +17,7 @@ public class BuyMenu : MonoBehaviour
     private void Awake()
     {
         container = transform.Find("container");
+        container.gameObject.SetActive(false);
         shopItemTemplate = container.Find("BuyMenuItemTemplate");
         shopItemTemplate.gameObject.SetActive(false);
         pointsController = GameObject.Find("Player").GetComponent<PointsController>();
