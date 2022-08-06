@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (meleeAction.ReadValue<float>() == 1)
+        if (meleeAction.WasPressedThisFrame())
         {
             animator.SetTrigger("meleeAttack");
         }
