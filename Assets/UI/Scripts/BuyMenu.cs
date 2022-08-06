@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using TMPro;
 
 public class BuyMenu : MonoBehaviour
 {
+    [SerializeField] PlayerInput input;
+    InputAction openBuyMenu;
+
     Transform container;
     Transform shopItemTemplate;
     PointsController pointsController;
@@ -16,12 +20,28 @@ public class BuyMenu : MonoBehaviour
         shopItemTemplate = container.Find("BuyMenuItemTemplate");
         shopItemTemplate.gameObject.SetActive(false);
         pointsController = GameObject.Find("Player").GetComponent<PointsController>();
+        openBuyMenu = input.actions["OpenBuyMenu"];
     }
 
     private void Start()
     {
         CreateItemButton(Item.ItemType.Pistol, "Pistol", Item.GetCost(Item.ItemType.Pistol), 0);
         CreateItemButton(Item.ItemType.Rifle, "Rifle", Item.GetCost(Item.ItemType.Rifle), 1);
+    }
+
+    private void Update()
+    {
+        if (openBuyMenu.WasPressedThisFrame())
+        {
+            if (container.gameObject.activeSelf)
+            {
+                container.gameObject.SetActive(false);
+            }
+            else if (!container.gameObject.activeSelf)
+            {
+                container.gameObject.SetActive(true);
+            }
+        }
     }
 
     void CreateItemButton(Item.ItemType itemType, string itemName, int itemCost, int positionIndex)
@@ -43,6 +63,8 @@ public class BuyMenu : MonoBehaviour
     {
         print("TRYING TO BUY " + itemType.ToString() + " for " + Item.GetCost(itemType));
         print("Player has " + pointsController.Points + " points");
+
+
 
     }
 }
