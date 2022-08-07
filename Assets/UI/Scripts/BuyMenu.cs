@@ -67,8 +67,12 @@ public class BuyMenu : MonoBehaviour
     {
         print("TRYING TO BUY " + itemType.ToString() + " for " + Item.GetCost(itemType));
         print("Player has " + pointsController.Points + " points");
-
-        weaponSwitcher.AddWeapon(Item.GetPrefab(itemType));
-
+        if (pointsController.Points >= Item.GetCost(itemType))
+        {
+            weaponSwitcher.AddWeapon(Item.GetPrefab(itemType));
+            print(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject);
+            UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.GetComponent<Button>().onClick.RemoveAllListeners();
+            pointsController.Points -= Item.GetCost(itemType);
+        }
     }
 }
