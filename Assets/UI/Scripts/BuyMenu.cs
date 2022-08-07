@@ -14,6 +14,8 @@ public class BuyMenu : MonoBehaviour
     Transform shopItemTemplate;
     PointsController pointsController;
 
+    WeaponSwitcher weaponSwitcher;
+
     private void Awake()
     {
         container = transform.Find("container");
@@ -22,6 +24,7 @@ public class BuyMenu : MonoBehaviour
         shopItemTemplate.gameObject.SetActive(false);
         pointsController = GameObject.Find("Player").GetComponent<PointsController>();
         openBuyMenu = input.actions["OpenBuyMenu"];
+        weaponSwitcher = GameObject.Find("WeaponController").GetComponent<WeaponSwitcher>();
     }
 
     private void Start()
@@ -65,7 +68,7 @@ public class BuyMenu : MonoBehaviour
         print("TRYING TO BUY " + itemType.ToString() + " for " + Item.GetCost(itemType));
         print("Player has " + pointsController.Points + " points");
 
-
+        weaponSwitcher.AddWeapon(Item.GetPrefab(itemType));
 
     }
 }

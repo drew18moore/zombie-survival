@@ -14,11 +14,12 @@ public class Shoot : MonoBehaviour
     public float damage;
 
     // Input
-    [SerializeField] PlayerInput input;
+    PlayerInput input;
     [SerializeField] InputAction fireAction;
 
     private void Start()
     {
+        input = GameObject.Find("Player").GetComponent<PlayerInput>();
         fireAction = input.actions["Fire"];
     }
 

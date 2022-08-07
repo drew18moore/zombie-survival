@@ -21,4 +21,16 @@ public class Item
                 return 2000;
         }
     }
+
+    public static GameObject GetPrefab(ItemType itemType)
+    {
+        switch (itemType)
+        {
+            default:
+            case ItemType.Pistol:
+                return (GameObject)Resources.Load("Weapons/PistolController");
+            case ItemType.Rifle:
+                return (GameObject)Resources.Load("Weapons/RifleController");
+        }
+    }
 }

@@ -97,7 +97,8 @@ public class PlayerController : MonoBehaviour
 
     public void SwordAttack()
     {
-        weaponSwitcher.currentWeapon.SetActive(false);
+        if (weaponSwitcher.currentWeapon != null)
+            weaponSwitcher.currentWeapon.SetActive(false);
         LockMovement();
         if (spriteRenderer.flipX == true) swordAttack.AttackLeft();
         else swordAttack.AttackRight();
@@ -105,7 +106,8 @@ public class PlayerController : MonoBehaviour
 
     public void StopSwordAttack()
     {
-        weaponSwitcher.currentWeapon.SetActive(true);
+        if (weaponSwitcher.currentWeapon != null)
+            weaponSwitcher.currentWeapon.SetActive(true);
         UnlockMovement();
         swordAttack.StopAttack();
     }
