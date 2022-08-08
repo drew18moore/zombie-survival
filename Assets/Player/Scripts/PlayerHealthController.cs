@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealthController : MonoBehaviour
 {
@@ -32,8 +33,7 @@ public class PlayerHealthController : MonoBehaviour
 
             if (health <= 0)
             {
-
-                print("PLAYER DEAD");
+                SceneManager.LoadScene(0);
             }
         }
     }
