@@ -23,6 +23,7 @@ public class AStarPathfinding : MonoBehaviour
 
     private void Awake()
     {
+
         grid = GameObject.Find("AStar").GetComponent<AStarGrid>();
         target = GameObject.Find("Player").transform;
     }
@@ -43,23 +44,14 @@ public class AStarPathfinding : MonoBehaviour
         Node startNode = grid.NodeFromWorldPoint(startPos);
         Node targetNode = grid.NodeFromWorldPoint(targetPos);
 
-        List<Node> openList = new List<Node>();
+        Heap<Node> openList = new Heap<Node>(grid.MaxSize);
         HashSet<Node> closedList = new HashSet<Node>();
 
         openList.Add(startNode);
 
         while (openList.Count > 0)
         {
-            Node currentNode = openList[0];
-            for (int i = 1; i < openList.Count; i++)
-            {
-                if (openList[i].getFCost() < currentNode.getFCost() || openList[i].getFCost() == currentNode.getFCost() && openList[i].hCost < currentNode.hCost)
-                {
-                    currentNode = openList[i];
-                }
-            }
-
-            openList.Remove(currentNode);
+            Node currentNode = openList.RemoveFirst();
             closedList.Add(currentNode);
 
             if (currentNode == targetNode)

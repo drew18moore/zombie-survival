@@ -24,6 +24,14 @@ public class AStarGrid : MonoBehaviour
         CreateGrid();
     }
 
+    public int MaxSize
+    {
+        get
+        {
+            return gridSizeX * gridSizeY;
+        }
+    }
+
     void CreateGrid()
     {
         grid = new Node[gridSizeX, gridSizeY];
