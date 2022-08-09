@@ -12,9 +12,6 @@ public class AStarPathfinding : MonoBehaviour
     AStarGrid grid;
 
     [SerializeField] float maxSpeed = 8f;
-    [SerializeField] float moveSpeed = 2f;
-    [SerializeField] float rotationSpeed = 8f;
-    [SerializeField] float satisfactionRadius = 1f;
     [SerializeField] Rigidbody2D rb;
 
     Quaternion targetRotation;
