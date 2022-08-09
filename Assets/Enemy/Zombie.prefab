@@ -413,7 +413,7 @@ MonoBehaviour:
     m_Bits: 128
   attackDamage: 10
   timeBetweenAttacks: 1
-  attackRange: 0.25
+  attackRange: 0.1
 --- !u!1 &4439469594408272613
 GameObject:
   m_ObjectHideFlags: 0

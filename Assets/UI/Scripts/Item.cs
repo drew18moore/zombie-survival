@@ -18,7 +18,7 @@ public class Item
             case ItemType.Pistol:
                 return 1000;
             case ItemType.Rifle:
-                return 2000;
+                return 3500;
         }
     }
 
