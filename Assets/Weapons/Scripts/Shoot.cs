@@ -33,12 +33,29 @@ public class Shoot : MonoBehaviour
 
     public void ShootGun() {
         //print("SHOOTING: " + transform.name);
-        if (Time.time > nextFire)
+        if (gameObject.name == "ShotgunController")
         {
-            nextFire = Time.time + fireRate;
-            GameObject bulletInstance = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
-            bulletInstance.GetComponent<Rigidbody2D>().AddForce(bulletInstance.transform.right * bulletSpeed);
+            if (Time.time > nextFire)
+            {
+                nextFire = Time.time + fireRate;
+                GameObject pelletInstance1 = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
+                GameObject pelletInstance2 = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
+                GameObject pelletInstance3 = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
+                pelletInstance1.GetComponent<Rigidbody2D>().AddForce(pelletInstance1.transform.right * bulletSpeed + pelletInstance1.transform.up * 25f);
+                pelletInstance2.GetComponent<Rigidbody2D>().AddForce(pelletInstance2.transform.right * bulletSpeed);
+                pelletInstance3.GetComponent<Rigidbody2D>().AddForce(pelletInstance3.transform.right * bulletSpeed - pelletInstance3.transform.up * 25f);
+            }
         }
+        else
+        {
+            if (Time.time > nextFire)
+            {
+                nextFire = Time.time + fireRate;
+                GameObject bulletInstance = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
+                bulletInstance.GetComponent<Rigidbody2D>().AddForce(bulletInstance.transform.right * bulletSpeed);
+            }
+        }
+        
         
     }    
 }

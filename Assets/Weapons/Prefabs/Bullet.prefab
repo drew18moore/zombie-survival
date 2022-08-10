@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3249926051409235167}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,3 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbfb0a48108fa1c499c2f6bda8608954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponSwitcher: {fileID: 0}
+  pointsController: {fileID: 0}
+  pointsOnHit: 50

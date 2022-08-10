@@ -16,11 +16,14 @@ public class BulletCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
-        if (collision.tag == "Enemy")
+        if (collision.tag != "Bullet")
         {
-            collision.GetComponent<EnemyHealthController>().Health -= weaponSwitcher.currentWeapon.GetComponent<Shoot>().damage;
-            pointsController.Points += pointsOnHit;
+            Destroy(gameObject);
+            if (collision.tag == "Enemy")
+            {
+                collision.GetComponent<EnemyHealthController>().Health -= weaponSwitcher.currentWeapon.GetComponent<Shoot>().damage;
+                pointsController.Points += pointsOnHit;
+            }
         }
     }
 }

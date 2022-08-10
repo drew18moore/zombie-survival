@@ -7,7 +7,8 @@ public class Item
     public enum ItemType
     {
         Pistol,
-        Rifle
+        Rifle,
+        Shotgun
     }
 
     public static int GetCost(ItemType itemType)
@@ -18,6 +19,8 @@ public class Item
             case ItemType.Pistol:
                 return 1000;
             case ItemType.Rifle:
+                return 3500;
+            case ItemType.Shotgun:
                 return 3500;
         }
     }
@@ -31,6 +34,8 @@ public class Item
                 return (GameObject)Resources.Load("Weapons/PistolController");
             case ItemType.Rifle:
                 return (GameObject)Resources.Load("Weapons/RifleController");
+            case ItemType.Shotgun:
+                return (GameObject)Resources.Load("Weapons/ShotgunController");
         }
     }
 }

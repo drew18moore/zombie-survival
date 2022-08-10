@@ -31,6 +31,7 @@ public class BuyMenu : MonoBehaviour
     {
         CreateItemButton(Item.ItemType.Pistol, "Pistol", Item.GetCost(Item.ItemType.Pistol), 0);
         CreateItemButton(Item.ItemType.Rifle, "Rifle", Item.GetCost(Item.ItemType.Rifle), 1);
+        CreateItemButton(Item.ItemType.Shotgun, "Shotgun", Item.GetCost(Item.ItemType.Shotgun), 2);
     }
 
     private void Update()
