@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject credits;
+    [SerializeField] GameObject controls;
     public void PlayGame()
     {
         SceneManager.LoadScene(1);
@@ -33,5 +34,11 @@ public class MainMenu : MonoBehaviour
     {
         gameObject.SetActive(false);
         mainMenu.SetActive(true);
+    }
+
+    public void Controls()
+    {
+        gameObject.SetActive(false);
+        controls.SetActive(true);
     }
 }
